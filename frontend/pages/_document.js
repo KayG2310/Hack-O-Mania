@@ -7,7 +7,7 @@ export default function App(){
     <Html lang="en">
       <Head />
       <body>
-        <div className="flex h-16 bg-slate-700 justify-center items-center">
+        <div className="flex h-20 bg-slate-800 justify-center items-center fixed w-full opacity-70">
             <Link className="mr-auto pl-10" href="/">
                 <img src="/logo.png" alt="Logo" className="h-14" />
             </Link>
@@ -18,6 +18,7 @@ export default function App(){
               <a href="/login" className="text-white">Login</a>
             </div>
         </div>
+        <div className="h-20"></div>
 
         <Main />
         <NextScript />
