@@ -12,22 +12,22 @@ export default function App(){
         <form className="flex flex-col items-center justify-center w-1/3 mt-[5px]">
         <div className="flex items-center justify-center font-bold mb-10 text-3xl text-cyan-100">Add Sample Data</div>
         <input 
-        type='text' placeholder='Enter Crop Name' className="border-2 border-black bg-gradient-to-r from-blue-200 to-blue-400  rounded-md  mb-5  w-[30vw] pl-[11vw] hover:bg-blue-200 text-black placeholder-[#574e4e] hover: bg-gradient-to-r from-blue-500 to-blue-700" ></input>
+        type='text' placeholder='Enter Crop Name' className="border-2 border-black bg-gradient-to-r from-blue-200 to-blue-400  rounded-md  mb-5  w-[30vw] pl-[11vw] hover:bg-blue-200 text-black placeholder-[#574e4e] hover: bg-gradient-to-r from-blue-200 to-blue-300" ></input>
 
         <input 
-        type='text' placeholder='Enter State' className="border-2 border-black bg-gradient-to-r from-blue-200 to-blue-400  rounded-md mb-5 w-[30vw] pl-[11vw] text-black placeholder-[#574e4e] hover: bg-gradient-to-r from-blue-500 to-blue-700" ></input>
+        type='text' placeholder='Enter State' className="border-2 border-black bg-gradient-to-r from-blue-200 to-blue-400  rounded-md mb-5 w-[30vw] pl-[11vw] text-black placeholder-[#574e4e] hover: bg-gradient-to-r from-blue-200 to-blue-300" ></input>
 
         <input 
         type='text' placeholder='Enter District' className="border-2 border-black pl-[11vw]
-        bg-gradient-to-r from-blue-200 to-blue-400  rounded-md mb-5 w-[30vw] text-black placeholder-[#574e4e] hover: bg-gradient-to-r from-blue-500 to-blue-700" ></input>
+        bg-gradient-to-r from-blue-200 to-blue-400  rounded-md mb-5 w-[30vw] text-black placeholder-[#574e4e] hover: bg-gradient-to-r from-blue-200 to-blue-300" ></input>
 
         Add image of your crop
 
 
         <input 
-        type='file' placeholder='Add image of your crop' className="border-2 border-black bg-gradient-to-r from-blue-200 to-blue-400  rounded-md mb-5 w-[30vw] hover: bg-gradient-to-r from-blue-500 to-blue-700"></input>
+        type='file' placeholder='Add image of your crop' className="border-2 border-black bg-gradient-to-r from-blue-200 to-blue-300  rounded-md mb-5 w-[30vw] hover: bg-gradient-to-r from-blue-500 to-blue-700"></input>
 
-        <input type="submit" className=" border-2 border-black p-5 bg-gradient-to-r from-blue-500 to-blue-700 to-green-800 rounded-md mb-5 w-[15vw] hover: bg-blue-600"></input>
+        <input type="submit" className=" border-2 border-black p-5 bg-gradient-to-r from-blue-700  to-green-800 via-blue-950 rounded-md mb-5 w-[15vw] hover: bg-blue-600"></input>
 
 
         </form> 
