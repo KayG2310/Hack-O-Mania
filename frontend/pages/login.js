@@ -19,10 +19,8 @@ function Login( {name, description} ) {
     const { handleSignInWithGoogle } = useFirebase()
 
     async function redirectToGoogle(){
-        handleSignInWithGoogle().next(res => {
-            console.log(res.data)
-        })
-        // router.push('/profile/edit')
+        handleSignInWithGoogle()
+        router.push('/profile/edit')
     }
 
     console.log(useFirebase().user)

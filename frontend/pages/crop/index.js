@@ -10,8 +10,10 @@ function Dropdowns() {
     "Month Planted": ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
   };
 
-    const tableData = [{'SNo':1,"Crop Name": 'Wheat', 'State': 'Punjab', 'Area': 60, 'Month': 'November'},
-    {'SNo':1,"Crop Name": 'Wheat', 'State': 'Punjab', 'Area': 60, 'Month': 'November'}]
+    let [tableData, setTableData] = useState([{"S. No.": 1, "Crop Name": 'Wheat', 'State': 'Punjab', 'Month': 'November', 'Count': 20},
+    {"S. No.": 1, "Crop Name": 'Wheat', 'State': 'Punjab', 'Month': 'November', 'Count': 20}]);
+    // const tableData = [{"S. No.": 1, "Crop Name": 'Wheat', 'State': 'Punjab', 'Month': 'November', 'Count': 20},
+    // {"S. No.": 1, "Crop Name": 'Wheat', 'State': 'Punjab', 'Month': 'November', 'Count': 20}]
 
   const initialCheckedItems = Object.keys(dictionary).reduce((acc, category) => {
     acc[category] = [];
@@ -31,7 +33,24 @@ function Dropdowns() {
         return { ...prevItems, [category]: prevItems[category].filter(i => i !== item) };
       }
     });
+    
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND}/crop/get`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(checkedItems)
+    }).then(res => res.json()).then(data => {
+      // console.log(data.data)
+      setTableData(data.data);
+      console.log(tableData)
+    })
+
   };
+
+  useEffect(() => {
+    console.log(tableData); // This will log the updated array
+  }, [tableData]);
 
   useEffect(() => {
     console.log(checkedItems); // This will log the updated array
@@ -77,11 +96,11 @@ function Dropdowns() {
       <table className='mt-5 w-[80vw] m-auto border-black border border-spacing-5'>
         <thead className=' bg-red-300 border-2 border-black'>
           <tr className='w-full m-auto grid items-center justify-center text-xl grid-cols-5 p-5'>
-            <th>SNo</th>
+            <th>S. No.</th>
             <th>Crop Name</th>
             <th>State</th>
-            <th>Area</th>
             <th>Month</th>
+            <th>Count</th>
           </tr>
         </thead>
       <tbody>
@@ -91,7 +110,7 @@ function Dropdowns() {
 
           {Object.keys(crop).map((key) => (
             <th>{crop[key]}</th>
-          ))}       
+          ))}
         </tr>
       ))}
       </tbody>

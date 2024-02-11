@@ -18,5 +18,7 @@ class Crop(models.Model):
     A user's crop
     """
     name = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    district = models.CharField(max_length=100)
+    cycle = models.CharField(max_length=100)
     owner = models.ManyToManyField('User', related_name='ownership')
-    #More to be added (Depends on frontend form)
