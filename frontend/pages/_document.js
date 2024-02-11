@@ -37,7 +37,7 @@ export default function App(){
             </Link>
         <div className='navbar flex mr-auto text-3xl text-white'>
           <ul className='gap-[60px] flex'>
-            <li><a href='add_crop'>Add Data</a></li>
+            <li><a href='crop'>Crops</a></li>
             <li><a href='support'>Support</a></li>
           </ul>
         </div>

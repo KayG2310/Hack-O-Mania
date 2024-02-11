@@ -22,7 +22,7 @@ export default function App(){
         bg-gradient-to-r from-blue-200 to-blue-400  rounded-md mb-5 w-[30vw] text-black placeholder-[#574e4e] hover: bg-gradient-to-r from-blue-200 to-blue-300" ></input>
 
 
-<input 
+        <input 
         type='month' placeholder='Enter Cycle of the crop' className="border-2 border-white pl-[11vw]
         bg-gradient-to-r from-blue-200 to-blue-400  rounded-md mb-5 w-[30vw] text-black placeholder-[#574e4e] hover: bg-gradient-to-r from-blue-200 to-blue-300" ></input>
 
