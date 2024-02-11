@@ -11,7 +11,7 @@ function Dropdowns() {
   };
 
     let [tableData, setTableData] = useState([{"S. No.": 1, "Crop Name": 'Wheat', 'State': 'Punjab', 'Month': 'November', 'Count': 20},
-    {"S. No.": 1, "Crop Name": 'Wheat', 'State': 'Punjab', 'Month': 'November', 'Count': 20}]);
+    {"S. No.": 2, "Crop Name": 'Carrot', 'State': 'Delhi', 'Month': 'November', 'Count': 10}]);
     // const tableData = [{"S. No.": 1, "Crop Name": 'Wheat', 'State': 'Punjab', 'Month': 'November', 'Count': 20},
     // {"S. No.": 1, "Crop Name": 'Wheat', 'State': 'Punjab', 'Month': 'November', 'Count': 20}]
 

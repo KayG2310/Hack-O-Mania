@@ -39,6 +39,8 @@ export default function App(){
           <ul className='gap-[60px] flex'>
             <li><a href='crop'>Crops</a></li>
             <li><a href='support'>Support</a></li>
+            <li><a href='crop/add'>Add crop</a></li>
+
           </ul>
         </div>
         {/* <Link className="mr-auto text-3xl" href='/login'>Hello</Link> */}
