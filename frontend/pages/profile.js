@@ -1,11 +1,14 @@
-const farmer = {
-    Name: 'farmer1',
-    Phone: '123456789',
-    Age: 30,
-    District: 'Karnal',
-    State: 'Haryana',
-    Area: 10, 
-    image:""}
+import useFirebase from "../lib/useFirebase"
+
+const User = {
+  image: "",
+  name: "Potato",
+  age: 8,
+  area: 51,
+  district: "punjab",
+  state: "haryana",
+  phone: 7239879423,
+}
 
 export default function App(){
     return (
@@ -17,13 +20,13 @@ export default function App(){
         {/* Profile Pic */}
         <div className="flex flex-col items-center relative">
             <div className="mt-4 w-64 h-64 bg-gray-700 rounded-full">
-                <img src={farmer["image"]} alt="Profile" className="w-full h-full object-cover rounded-full" />
+                <img src={User.image} alt="Profile" className="w-full h-full object-cover rounded-full" />
             </div>
         </div>
 
         <div className='grid grid-cols-2 gap-x-20 gap-y-5'>
         {/* Form */}
-        {Object.entries(farmer).map(([key, value]) => (
+        {Object.entries(User).map(([key, value]) => (
             key === "image" ? null :
             <div className='gap-5 grid'>
             <Title name={key} />

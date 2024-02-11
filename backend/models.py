@@ -4,11 +4,14 @@ class User(models.Model):
     """
     A user of the Farmcom platform.
     """
-    username = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     email = models.EmailField()
+    phone = models.BigIntegerField(null=True)
+    age = models.IntegerField(null=True)
+    district = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    area = models.CharField(max_length=100)
     owned_crops = models.ManyToManyField('Crop', related_name='ownership')
-    #More to be added (Depends on frontend form)
 
 class Crop(models.Model):
     """

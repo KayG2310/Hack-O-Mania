@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
+import useFirebase from "../lib/useFirebase"
 
 export default function App(){
     return (
@@ -11,14 +12,18 @@ export default function App(){
     )
 }
 
-function Login( {name, description} ) {
 
+function Login( {name, description} ) {
     const router = useRouter();
 
-    const redirectToGoogle = () => {
-        router.push('/editProfile')
+    const { handleSignInWithGoogle } = useFirebase()
+
+    async function redirectToGoogle(){
+        handleSignInWithGoogle();
+        router.push('/profile')
     }
 
+    console.log(useFirebase().user)
     return (
         <div className="flex flex-col gap-5 justify-center items-center rounded-lg p-10 w-[40vw] bg-gradient-to-b from-blue-900 to-green-700">
             <h1 className="text-3xl font-bold">Login as {name}</h1>

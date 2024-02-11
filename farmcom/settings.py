@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'corsheaders',
     'farmcom',
-    'backend'
+    'backend',
 ]
 
 MIDDLEWARE = [

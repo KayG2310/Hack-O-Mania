@@ -1,8 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import Link from 'next/link';
 
-
 export default function App(){
+
     return (
     <Html lang="en">
       <Head />
@@ -33,6 +33,7 @@ export default function App(){
               <a href="/login" className="text-white">Login</a>
             </div>
         </div>
+        
         <div className="h-20"></div>
 
         <Main />

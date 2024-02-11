@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
+import { parse } from 'cookie';
 import { FaFileUpload } from 'react-icons/fa';
-import { RxCross2 } from "react-icons/rx";
-import { HiOutlinePlusSm } from "react-icons/hi";
+import { useRouter } from 'next/router';
+import useFirebase from "../lib/useFirebase"
 
 const farmer = {
-    Name: 'farmer1',
-    Phone: '123456789',
-    Age: 30,
-    District: 'Karnal',
-    State: 'Haryana',
-    Area: 10, }
+    name: 'farmer1',
+    phone: '123456789',
+    age: 30,
+    district: 'Karnal',
+    state: 'Haryana',
+    area: 10, }
 
 
 export default function App(){
+    const router = useRouter();
+
+    const user = useFirebase().user;
+    console.log(user)
 
     const [image, setImage] = useState(null);
-
 
     const handleFileChange = (event) => {
         // Get the selected file
@@ -25,6 +29,26 @@ export default function App(){
         setImage(imageUrl);
       };
 
+      const handleSubmit = () => {
+        farmer.email = user.email
+        let json_data = {};
+        for(let key in farmer){
+          json_data[key] = farmer[key];
+        }
+        console.log(json_data);
+    
+        fetch(`${process.env.NEXT_PUBLIC_BACKEND}/profile/update`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(json_data)
+        }).then(res => res.json()).then(data => {
+          console.log(data);
+          router.push('/profile');
+        })
+    
+      }
 
   return (
     <main className="overflow-y-auto">
@@ -64,7 +88,7 @@ export default function App(){
 
         {/* Submit */}
 
-        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg w-64 h-12'>
+        <button onClick={handleSubmit} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg w-64 h-12'>
             Submit
         </button>
         <br/>
