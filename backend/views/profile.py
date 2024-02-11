@@ -2,14 +2,14 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from ..models import Crop
-from ._util import get_user_and_data
+from ._util import get_user_and_data, get_user_and_data_by_id
 
 @csrf_exempt
 def get_profile(req):
     """
     Get user profile
     """
-    user, data = get_user_and_data(req)
+    user, data = get_user_and_data_by_id(req)
     return JsonResponse({'message': 'Success', 'data': {
         'name': user.name,
         'age': user.age,
@@ -18,7 +18,6 @@ def get_profile(req):
         'state': user.state,
         'area': user.area
     }})
-
 
 @csrf_exempt
 def update_profile(req):
@@ -33,4 +32,4 @@ def update_profile(req):
     user.state = data.get('state', user.state)
     user.area = data.get('area', user.area)
     user.save()
-    return JsonResponse({'message': 'Success'})
+    return JsonResponse({'message': 'Success', 'data': {'id': user.id}})

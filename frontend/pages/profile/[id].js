@@ -1,16 +1,4 @@
-import useFirebase from "../lib/useFirebase"
-
-const User = {
-  image: "",
-  name: "Potato",
-  age: 8,
-  area: 51,
-  district: "punjab",
-  state: "haryana",
-  phone: 7239879423,
-}
-
-export default function App(){
+export default function App({User}){
     return (
         <main>
       <div className="flex flex-col items-center justify-center w-full h-full gap-5">
@@ -52,4 +40,31 @@ function Title({name}){
         <h1 className="text-3xl font-bold">{name}</h1>
       </div>
     )
+}
+
+export async function getServerSideProps(context) {
+  console.log(context.params.id)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND}/profile/get_current`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({'id' : context.params.id}),
+  })
+  const data = (await res.json())['data']
+  console.log(data)
+
+  return { 
+    props: {
+      User: {
+        name: data.name,
+        age: data.age,
+        area: data.area,
+        district: data.district,
+        state: data.state,
+        phone: data.phone
+      },
+    }
+  }
+
 }

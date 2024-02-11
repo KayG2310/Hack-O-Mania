@@ -2,22 +2,20 @@ import React, { useState } from 'react';
 import { parse } from 'cookie';
 import { FaFileUpload } from 'react-icons/fa';
 import { useRouter } from 'next/router';
-import useFirebase from "../lib/useFirebase"
+import useFirebase from "../../lib/useFirebase"
 
 const farmer = {
-    name: 'farmer1',
-    phone: '123456789',
-    age: 30,
-    district: 'Karnal',
-    state: 'Haryana',
-    area: 10, }
-
+    name: 'Enter Name',
+    phone: 'Enter Phone',
+    age: 'Enter Age',
+    district: 'Enter District',
+    state: 'Enter State',
+    area: 'Enter Area', }
 
 export default function App(){
     const router = useRouter();
 
     const user = useFirebase().user;
-    console.log(user)
 
     const [image, setImage] = useState(null);
 
@@ -30,22 +28,22 @@ export default function App(){
       };
 
       const handleSubmit = () => {
-        farmer.email = user.email
-        let json_data = {};
-        for(let key in farmer){
-          json_data[key] = farmer[key];
-        }
-        console.log(json_data);
-    
         fetch(`${process.env.NEXT_PUBLIC_BACKEND}/profile/update`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(json_data)
+          body: JSON.stringify({
+            'email': user.email,
+            'name': farmer.name,
+            'age': farmer.age,
+            'area': farmer.area,
+            'district': farmer.district,
+            'state': farmer.state,
+            'phone': farmer.phone
+          })
         }).then(res => res.json()).then(data => {
-          console.log(data);
-          router.push('/profile');
+          router.push(`/profile/${data.data.id}`)
         })
     
       }
