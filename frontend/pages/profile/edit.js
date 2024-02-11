@@ -56,11 +56,6 @@ export default function App(){
 
         {/* Profile Pic */}
         <div className="flex flex-col items-center relative">
-            <label htmlFor="profilePic" className='z-[1] bg-gray-900 rounded-lg h-12 w-12 place-items-center grid absolute m-[18vh]'>
-              <FaFileUpload />
-            </label>
-
-            <input id="profilePic" type="file" accept="image/*" onChange={handleFileChange} className="hidden bg-gray-300" />
 
             <div className="mt-4 w-64 h-64 bg-gray-700 rounded-full">
                 {image && <img src={image} alt="Profile" className="w-full h-full object-cover rounded-full hover:gre" />}

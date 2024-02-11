@@ -1,9 +1,17 @@
+import { FaPencilAlt } from 'react-icons/fa';
+import Link from 'next/link';
+
 export default function App({User}){
     return (
         <main>
       <div className="flex flex-col items-center justify-center w-full h-full gap-5">
         {/* Blue Top */}
         <div className="bg-blue-500 h-[30vh] w-full absolute top-0 z-[-1]"></div>
+
+        <Link 
+            href='/profile/edit' 
+            className='absolute z-[1] top-24 right-5 bg-gray-900 rounded-lg h-12 w-12 place-items-center grid'
+        ><FaPencilAlt /></Link>
 
         {/* Profile Pic */}
         <div className="flex flex-col items-center relative">

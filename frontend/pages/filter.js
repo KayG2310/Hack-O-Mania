@@ -59,7 +59,7 @@ function Dropdowns() {
             <div className=' gap-0.5 grid'>
               {dictionary[category].map(item => (
     // Div for individual item in the dropdown
-                <div className='h-8 w-52 bg-slate-900 text-white place-items-center rounded-lg' key={item}>
+                <div className='h-8 w-52 bg-slate-900 text-white place-items-center rounded-lg z-10' key={item}>
                   <label className='grid grid-cols-2 place-items-center'>
                     <input type="checkbox" name={item} checked={checkedItems[category ].includes(item)} onChange={(event) => handleCheckChange(event, category)} />
                     {item}
@@ -76,15 +76,12 @@ function Dropdowns() {
       <div className=''>
       <table className='mt-5 w-[80vw] m-auto border-black border border-spacing-5'>
         <thead className=' bg-red-300 border-2 border-black'>
-          <tr className='m-10'>
-            <div className='w-full m-auto grid items-center justify-center text-xl grid-cols-5 p-5'>
-
+          <tr className='w-full m-auto grid items-center justify-center text-xl grid-cols-5 p-5'>
             <th>SNo</th>
             <th>Crop Name</th>
             <th>State</th>
             <th>Area</th>
             <th>Month</th>
-            </div>
           </tr>
         </thead>
       <tbody>
