@@ -29,20 +29,26 @@ export default function App(){
                 <div className="list">
                     <ul className="flex m-14 list">
 
-                    <li>E-mail  </li>
-                    <li>Twitter  </li>
-                    <li>Instagram</li>
-                    <li>LinkedIn</li>
+                        <li>E-mail  </li>
+                        <li>Twitter  </li>
+                        <li>Instagram</li>
+                        <li>LinkedIn</li>
                     </ul>
+
                     <ul className="flex m-[45px] list"> 
-                    <li><a href="support.farmcom@gmail.com" className="text-[20px] m-[20px]">Click here</a> </li>
-                    <li><a href=''><img src='twitter.png' className="w-[60px] h-[60px] hover:cursor-pointer"></img></a></li>
-                    <li><a href=''><img src='insta.png' className="w-[45px] h-[45px] m-[30px]p-[-2px] hover:cursor-pointer"></img></a></li>
-                    <li><a href=''><img src='linkedin.png' className="w-[60px] h-[60px] hover:cursor-pointer"></img></a></li>
-                    
-
+                        <li>
+                            <a href="support.farmcom@gmail.com" className="text-[20px] m-[20px]">Click here</a>
+                        </li>
+                        <li>
+                            <a href=''><img src='twitter.png' className="w-[60px] h-[60px] hover:cursor-pointer"></img></a>
+                        </li>
+                        <li>
+                            <a href=''><img src='insta.png' className="w-[45px] h-[45px] m-[30px]p-[-2px] hover:cursor-pointer"></img></a>
+                        </li>
+                        <li>
+                            <a href=''><img src='linkedin.png' className="w-[60px] h-[60px] hover:cursor-pointer"></img></a>
+                        </li>
                     </ul>
-
                 </div>
                 </div>
 

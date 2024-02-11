@@ -23,7 +23,7 @@ export default function App(){
 
 
 <input 
-        type='text' placeholder='Enter Cycle of the crop' className="border-2 border-white pl-[11vw]
+        type='month' placeholder='Enter Cycle of the crop' className="border-2 border-white pl-[11vw]
         bg-gradient-to-r from-blue-200 to-blue-400  rounded-md mb-5 w-[30vw] text-black placeholder-[#574e4e] hover: bg-gradient-to-r from-blue-200 to-blue-300" ></input>
 
         <p className="text-2xl text-white">Add image of your crop</p>
