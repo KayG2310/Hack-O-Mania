@@ -36,12 +36,12 @@ frontend
 ├── pages
 │   ├── _app.js
 │   ├── _document.js
-│   ├── api
-│   ├── app.js
-│   ├── creations
+│   ├── login.js
+│   ├── filter.js
 │   ├── index.js
 │   ├── profile
-│   └── servers
+│   ├── crops.js
+│   └── support.js
 ├── postcss.config.js
 ├── public
 ├── styles
@@ -52,9 +52,9 @@ frontend
 ## Files
 The folder `pages` is wheremost of the pages of the website reside. 
 1. `_document.js` houses the navbar of the website
-2. `servers` houses file for server creation/showcase page
-3. `creations` similar to `servers` but for showcase of creations
-4. `profile` houses the profile frontend and edit pages
+2. `filter.js` have the filters for admin panel
+3. `crop.js` page for farmers to add crops that they grow/harvest
+4. `profile` houses the profile frontend and edit pages for both farmers and admins
 
 The folder `styles` contains the file `globals.css` containing required css for the project.
 
